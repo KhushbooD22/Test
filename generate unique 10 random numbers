@@ -1,0 +1,21 @@
+import random
+
+# generate 6 unique random numbers
+unique_nums = random.sample(range(1, 101), 6)
+
+# select 2 random numbers from the unique list and duplicate them
+duplicates = random.choices(unique_nums, k=2) * 2
+
+# concatenate the two lists
+numbers = unique_nums + duplicates
+
+# print the initial list with duplicates
+print("Initial list with duplicates: ", numbers)
+
+# remove duplicates by converting the list to a set and then back to a list
+numbers = list(set(numbers))
+
+# sort the list in descending order
+numbers.sort(reverse=True)
+
+print("Final list with duplicates removed and sorted: ", numbers)
